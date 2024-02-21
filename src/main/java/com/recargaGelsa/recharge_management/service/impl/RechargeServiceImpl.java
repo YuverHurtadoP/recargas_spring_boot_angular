@@ -56,6 +56,7 @@ public class RechargeServiceImpl implements IRechargeService{
 				objectRecharge.setOperator(objectOperator);
 				objectRecharge.setSaleDate(LocalDateTime.now());
 				objectRecharge.setPriceRecharge(dto.getPrice());
+				objectRecharge.setPhoneRecharge(dto.getPhoneRecharge());
 				
 				RechargeEntity objectRechargeResponse = rechargeRepository.save(objectRecharge);
 				

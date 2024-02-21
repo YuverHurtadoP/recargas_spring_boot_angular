@@ -25,5 +25,7 @@ public class RechargeResponseDto {
 	private String name;
 	
 	private String descriptionOperator;
+	
+	private String phoneRecharge;
 
 }

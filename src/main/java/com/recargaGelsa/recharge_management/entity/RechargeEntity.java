@@ -35,6 +35,8 @@ public class RechargeEntity {
     
     private LocalDateTime saleDate;
     
+    private String phoneRecharge;
+    
     @ManyToOne
     private PersonEntity seller;
 

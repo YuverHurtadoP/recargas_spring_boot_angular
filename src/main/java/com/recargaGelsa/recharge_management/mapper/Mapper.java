@@ -24,6 +24,7 @@ public class Mapper {
 	                dto.setSaleDate(entity.getSaleDate());
 	                dto.setSaleDate(entity.getSaleDate());
 	                dto.setPriceRecharge(entity.getPriceRecharge());
+	                dto.setPhoneRecharge(entity.getPhoneRecharge());
 	                arrayDto.add(dto);
 	            }  
 	        }

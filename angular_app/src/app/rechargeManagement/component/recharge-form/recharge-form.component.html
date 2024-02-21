@@ -1,0 +1,73 @@
+<div class="mat-dialog-container">
+  <div class="card">
+    <div class="card-header   text-white text-center" >
+      <h4 class="mb-0">
+        <mat-icon style="color: white; font-size: 2rem;">how_to_reg</mat-icon> Formulario de Recarga
+      </h4>
+    </div>
+    <div class="card-body">
+
+      <form   [formGroup]="formRegister"   >
+        <div class="columnDivision "  >
+          <!--column 1-->
+          <div class="spaceBottom">
+            <select formControlName="operator" class="form-select" aria-label="Default select example">
+              <option value="">---Seleccionar Operador---</option>
+              <option *ngFor="let item of operatorResponseDto" [value]="item.id">
+                {{item.description}}
+              </option>
+            </select>
+            <div class="error" *ngIf="formRegister.get('operator')?.touched && formRegister.get('operator')?.hasError?.('havespace')">{{msg}}</div>
+        </div>
+         <!--column 2-->
+
+          <div class="spaceBottom">
+            <input type="text" formControlName="price" class="form-control" id="document" placeholder="Valor recarga" name="document" >
+            <div class="error" *ngIf="formRegister.get('price')?.touched && formRegister.get('price')?.hasError?.('havespace')">{{msg}}</div>
+            <div class="error" *ngIf="formRegister.get('price')?.touched && formRegister.get('price')?.hasError?.('pattern')">{{msg2}}</div>
+
+          </div>
+        </div>
+
+
+
+        <div class="columnDivision"  >
+          <!--column 1-->
+          <div class="spaceBottom">
+
+              <select formControlName="person" class="form-select" aria-label="Default select example">
+                <option value="">---  quien hace la recarga ?--</option>
+                <option *ngFor="let item of  listPersonResponseDto" [value]="item.id">
+                  {{item.name}} {{item.lastname}}
+                </option>
+              </select>
+              <div class="error" *ngIf="formRegister.get('person')?.touched && formRegister.get('person')?.hasError?.('havespace')">{{msg}}</div>
+
+
+        </div>
+         <!--column 2-->
+
+          <div class=" spaceBottom">
+            <input type="text" formControlName="phone" class="form-control" id="document" placeholder="Nro. celular" name="document" >
+            <div class="error" *ngIf="formRegister.get('phone')?.touched && formRegister.get('phone')?.hasError?.('havespace')">{{msg}}</div>
+            <div class="error" *ngIf="formRegister.get('phone')?.touched && formRegister.get('phone')?.hasError?.('pattern')">{{msg2}}</div>
+
+          </div>
+
+
+
+        </div>
+
+
+
+
+        <div style="display: grid;place-items: center; margin-bottom:3px ; ">
+          <button (click)="save()"  class="btn btn-primary btn-block"  style="background-color: #207cca;" >Guardar</button>
+        </div>
+
+
+      </form>
+    </div>
+
+  </div>
+</div>

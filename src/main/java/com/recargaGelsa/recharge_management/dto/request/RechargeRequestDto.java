@@ -22,5 +22,8 @@ public class RechargeRequestDto {
 	
 	@NotNull(message = "El seller no puede estar en blanco")
 	private int seller;
+	
+	@NotNull(message = "El celular no puede estar en blanco")
+	private String phoneRecharge;
 
 }
