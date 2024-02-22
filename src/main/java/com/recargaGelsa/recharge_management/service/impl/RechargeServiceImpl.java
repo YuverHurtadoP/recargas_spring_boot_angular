@@ -16,6 +16,7 @@ import com.recargaGelsa.recharge_management.dao.IOperatorRepository;
 import com.recargaGelsa.recharge_management.dao.IRechargeRepository;
 import com.recargaGelsa.recharge_management.dto.request.RechargeRequestDto;
 import com.recargaGelsa.recharge_management.dto.response.RechargeResponseDto;
+import com.recargaGelsa.recharge_management.dto.response.RechargeStatisticsDTO;
 import com.recargaGelsa.recharge_management.entity.OperatorEntity;
 import com.recargaGelsa.recharge_management.entity.RechargeEntity;
 import com.recargaGelsa.recharge_management.mapper.Mapper;
@@ -73,11 +74,17 @@ public class RechargeServiceImpl implements IRechargeService{
  
 
 	@Override
-	public List<RechargeResponseDto> listRecharge() {
-		List<RechargeEntity> listRecharge = rechargeRepository.findAll();
+	public List<RechargeResponseDto> listRecharge(int operetor, int seller) {
+		List<RechargeEntity> listRecharge = rechargeRepository.listRecharge(operetor, seller);
 		List<RechargeResponseDto> list = mapper.convertEntityToDto(listRecharge);
 	 
 		return list;
+	}
+
+
+	@Override
+	public List<RechargeStatisticsDTO> countAndSumByOperator() {
+		  return rechargeRepository.countAndSumByOperator();
 	}
 
 }

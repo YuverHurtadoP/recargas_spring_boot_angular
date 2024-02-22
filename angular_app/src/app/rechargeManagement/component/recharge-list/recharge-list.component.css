@@ -11,3 +11,9 @@
   padding: 8px; /* Añadir espacio entre celdas */
 }
 
+.spaceBottom{
+  margin-bottom: 3%;
+}
+.error{
+  color: red;
+}

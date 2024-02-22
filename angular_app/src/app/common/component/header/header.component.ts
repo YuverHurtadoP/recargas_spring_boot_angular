@@ -4,6 +4,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatDialog } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RechargeFormComponent } from 'src/app/rechargeManagement/component/recharge-form/recharge-form.component';
+import { StatisticsComponent } from 'src/app/rechargeManagement/component/statistics/statistics.component';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -18,6 +19,12 @@ export class HeaderComponent {
   abrirModalFormulario(): void {
 
     this.dialog.open(RechargeFormComponent, { width: '500px',  });
+
+}
+
+openStatistics(): void {
+
+  this.dialog.open(StatisticsComponent, { width: '500px',  });
 
 }
 }

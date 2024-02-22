@@ -5,6 +5,7 @@ import { Constants } from 'src/app/common/util/constants';
 import { OperatorResponseDto } from '../dto/response/operator-response-dto';
 import { RechargeRequestDto } from '../dto/request/recharge-request-dto';
 import { RechargeResponseDto } from '../dto/response/recharge-response-dto';
+import { StatisticsItem } from '../dto/response/statistics-item';
 
 @Injectable({
   providedIn: 'root'
@@ -30,13 +31,19 @@ export class RechargeService {
     ).pipe(  tap(() => this.saveSubject.next(true)));
   }
 
-  listRecharge(): Observable<RechargeResponseDto[]> {
+  listRecharge(operator: number, seller: number): Observable<RechargeResponseDto[]> {
     return this.httpClient.get<RechargeResponseDto[]>(
-      `${this.URL}recharge/list`
+      `${this.URL}recharge/list?operator=${operator}&seller=${seller}`
     );
   }
 
  getStateSave(): Observable<boolean> {
     return this.saveSubject.asObservable();
+  }
+
+  getRechargeStatistics(): Observable<StatisticsItem[]> {
+    return this.httpClient.get<StatisticsItem[]>(
+      `${this.URL}recharge/statistics`
+      );
   }
 }

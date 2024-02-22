@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "operator")
+@Table(name = "recharge")
 public class RechargeEntity {
 	
 	@Id

@@ -20,7 +20,7 @@ public class RechargeResponseDto {
 
 	private int seller;
 	
-	 private LocalDateTime saleDate;
+	private LocalDateTime saleDate;
 	
 	private String name;
 	
